@@ -3,12 +3,11 @@ class FoodsController < ApplicationController
     @foods = current_user.foods
   end
 
-  def new
-  end
+  def new; end
 
   def create
     @food = current_user.foods.create(food_params)
-    
+
     puts @current_user
     if @food.save
       redirect_to food_path, notice: 'New post created successfully.'
