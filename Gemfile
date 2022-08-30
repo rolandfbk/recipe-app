@@ -1,9 +1,13 @@
-# frozen_string_literal: true
-
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.1.2'
+
+gem 'rails-controller-testing'
+
+gem 'devise'
+
+gem 'cancancan', '~> 1.9'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem 'rails', '~> 7.0.3', '>= 7.0.3.1'
@@ -69,6 +73,7 @@ end
 group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem 'capybara'
+  gem 'rspec-rails', '~> 4.0.0'
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end

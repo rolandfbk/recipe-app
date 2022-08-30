@@ -32,7 +32,4 @@
 
 node_modules
 
-# Ignore ruby version
-Gemfile
-Gemfile.lock
 .ruby-version
