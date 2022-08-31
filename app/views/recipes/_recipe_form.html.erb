@@ -1,0 +1,9 @@
+<%= form_with model: @recipe, url: recipes_path, local: true do |f| %>
+  <div class="recipe_form_element">
+    <%= f.text_field :name, class:"input_from", placeholder: "Name", autofocus: true %>
+    <%= f.text_field :preparation_time, class:"input_from", placeholder: "Preparation time" %>
+    <%= f.text_field :cooking_time, class:"input_from", placeholder: "Cooking time" %>
+    <%= f.text_area :description, class:"textarea_from", placeholder: "Description..." %>
+    <%= f.submit 'Add recipe', class:"btn_submit_from" %>
+  </div
+<% end %>
