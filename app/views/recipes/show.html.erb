@@ -1,0 +1,56 @@
+<div class="recipe_details">
+  <%= link_to 'Back', recipes_path, class:"btn_back" %>
+  <div class="recipe_details_title">
+    <h3><%= @recipe.name %></h3>
+  </div>
+  
+  <div class="recipe_details_time">
+    <div class="recipe_details_time_preparation">
+      <p>Preparation time: <%= @recipe.preparation_time %></p>
+      <p>Cooking time: <%= @recipe.cooking_time %></p>
+    </div>
+    <div class="recipe_details_time_cooking">
+      <% if can? :manage, @recipe %>
+        <% if @recipe.public? %>
+          <span>
+            <p>Public: </p>
+            <%= form_with url: recipe_path(@recipe.id) do |f| %>
+              <%= f.submit 'Unpublish', class:"btn_submit_unpublish_from" %>
+            <% end %>
+          </span>
+        <% else %>
+          <span>
+            <p>Public: </p>
+            <%= form_with url: recipe_path(@recipe.id) do |f| %>
+              <%= f.submit 'Publish', class:"btn_submit_publish_from" %>
+            <% end %>
+          </span>
+        <% end %>
+      <% else %>
+        <span>Recipe by <%= @recipe.user.name %></span>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="recipe_details_description">
+    <p><%= @recipe.description %></p>
+  </div>
+
+  <div>
+  <%= link_to "Generate shopping list", general_shopping_list_index_path , class: "btn_generate_shopping_list" %>
+  
+  </div>
+  <hr>
+  <div class="recipe_details_foods">
+    <% @recipe_foods.each do |recipe_food| %>
+      <div class="recipe_details_foods_food">
+        <div class="recipe_details_foods_food_name">
+          <h4><%= recipe_food.food.name %></h4>
+        </div>
+        <div class="recipe_details_foods_food_quantity">
+          <h4><%= recipe_food.quantity %></h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
