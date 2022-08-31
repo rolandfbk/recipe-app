@@ -9,7 +9,7 @@ class FoodsController < ApplicationController
     @food = current_user.foods.new(food_params)
 
     if @food.save
-      redirect_to foods_path, 'New food created successfully.'
+      redirect_to foods_path, notice: 'New food created successfully.'
     else
       render :new, status: :unprocessable_entity
     end
