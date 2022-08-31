@@ -9,5 +9,5 @@ class User < ApplicationRecord
   validates :name, presence: true, allow_blank: true
   def admin?
     role == 'admin'
-  end 
+  end
 end
