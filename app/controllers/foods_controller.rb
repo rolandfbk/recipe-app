@@ -6,14 +6,19 @@ class FoodsController < ApplicationController
   def new; end
 
   def create
-    @food = current_user.foods.create(food_params)
+    @food = current_user.foods.new(food_params)
 
-    puts @current_user
     if @food.save
-      redirect_to food_path, notice: 'New post created successfully.'
+      redirect_to foods_path, 'New food created successfully.'
     else
       render :new, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @food = Food.find(params[:id])
+    @food.destroy
+    redirect_to foods_path
   end
 
   def food_params

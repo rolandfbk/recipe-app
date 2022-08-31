@@ -7,4 +7,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true, allow_blank: true
+  def admin?
+    role == 'admin'
+  end 
 end

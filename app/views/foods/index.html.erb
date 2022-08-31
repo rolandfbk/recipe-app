@@ -16,9 +16,11 @@
             <td><%= food.measurement_unit %></td>
             <td><%= food.price %></td>
             <td>
-                <%= link_to food_path(food) do %>
-                    Delete
-                <% end %>
+                <% if can? :destroy, food %>
+                    <div class="delete_food_action">
+                        <%= button_to "DELETE", { action: :destroy, id: food.id }, method: :delete, class: "btn_delete_food" %>
+                    </div>
+                <% end %> 
             </td>
         </tr>
     <% end %>
