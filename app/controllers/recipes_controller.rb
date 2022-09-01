@@ -1,6 +1,6 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.order(created_at: :desc).all
   end
 
   def show
@@ -20,6 +20,12 @@ class RecipesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(public: !@recipe.public)
+    redirect_to recipe_path(@recipe.id)
   end
 
   def destroy
