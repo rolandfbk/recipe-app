@@ -59,8 +59,9 @@
                   <td>$ <%= recipe_food.food.price * recipe_food.quantity %></td>
                   <% if current_user.id == @recipe.user_id %>
                     <td>
-                      <div class="delete_ingredient_action">
-                          <%= button_to "DELETE", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class: "btn_delete_ingredient" %>
+                      <div class="recipe_ingredient_action">
+                        <%= link_to "Modify", edit_recipe_recipe_food_path(@recipe.id, recipe_food.id), class: "btn_delete_ingredient" %>
+                        <%= button_to "Remove", recipe_recipe_food_path(@recipe.id, recipe_food.id), method: :delete, class: "btn_delete_ingredient" %>
                       </div>
                     </td>
                   <% end %> 
