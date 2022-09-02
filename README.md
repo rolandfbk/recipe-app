@@ -1,24 +1,45 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Recipe App
 
-Things you may want to cover:
+The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
 
-* Ruby version
+## Getting Started
+To get a local copy up and running follow these simple example steps.
 
-* System dependencies
+- Copy this link `https://github.com/rolandfbk/recipe-app`.
+- Get the directory that you want to clone the repository.
+- Open the command prompt in this directory.
+- Write `https://github.com/rolandfbk/recipe-app`.
+- Go to the repository folder in your command prompt `cd recipe-app`.
 
-* Configuration
+- Follow these steps to run the app:
+  - run `gem install`, then run `rails s`
 
-* Database creation
+## Authors
 
-* Database initialization
+👤 **Roland**
 
-* How to run the test suite
+- GitHub: [@rolandfbk](https://github.com/rolandfbk)
+- Twitter: [@rolandfbk](https://twitter.com/rolandfbk)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/roland-ossisa-yuma)
 
-* Services (job queues, cache servers, search engines, etc.)
+👤 **xxxxxxxxxx**
 
-* Deployment instructions
 
-* ...
+
+## 🤝 Contributing
+
+Contributions, issues, and feature requests are welcome!
+
+Feel free to check the [issues page](../../issues/).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+- etc
