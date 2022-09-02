@@ -1,0 +1,20 @@
+<h1>Shopping List</h1>
+<table>
+    <caption>List of foods</caption>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+    </thead>
+    </tbody>
+    <% @food_items_to_buy.each do |item| %>
+        <tr>
+            <td><%= item[:name] %></td>
+            <td><%= item[:quantity] %></td>
+            <td><%= item[:price] %></td>
+        </tr>
+    <% end %>
+    <tbody>
+</table>

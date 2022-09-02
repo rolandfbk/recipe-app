@@ -33,7 +33,10 @@
   </div>
 
   <div class="recipe_details_options">
-    <%= link_to "Generate shopping list", general_shopping_list_index_path , class: "btn_generate_shopping_list" %>
+    <%= form_with url: general_shopping_list_index_path do |f|%>
+      <%= f.hidden_field :recipe_id, value: @recipe.id %>
+      <%= f.submit "Generate shopping list", class: "btn_generate_shopping_list"%>
+    <% end %>
     <% if can? :manage, @recipe %>
       <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id) , class: "btn_add_ingredient" %>
     <% end %>
