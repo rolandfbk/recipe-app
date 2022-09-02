@@ -15,7 +15,8 @@ class GeneralShoppingListController < ApplicationController
           item = {
             :name => rfood.food.name,
             :quantity => (rfood.food.quantity < rfood.quantity)? rfood.quantity - rfood.food.quantity : rfood.quantity,
-            :price => rfood.food.price
+            :price => rfood.food.price,
+            :measurement_unit => rfood.food.measurement_unit
           }
         @food_items_to_buy << item
       end
