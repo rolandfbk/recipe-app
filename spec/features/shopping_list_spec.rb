@@ -17,7 +17,6 @@ RSpec.describe 'Shopping list page test', type: :feature do
       visit "/general_shopping_list?recipe=#{@recipe.id}"
       expect(current_path).to eq(general_shopping_list_index_path)
       expect(page).to have_text('Shopping List')
-      expect(page).to have_text('List of foods')
     end
   end
 end
