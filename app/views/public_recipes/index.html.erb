@@ -1,10 +1,15 @@
 <h1>List of public repices</h1>
 <% @public_recipes.each do |recipe| %>
-    <div class="public_recipes">
-        <div>
-            <p><%= recipe.name %></p>
-            <p><%= recipe.user.name %></p>
+    <%= link_to recipe_path(recipe.id) do %>
+        <div class="public_recipes">
+            <div>
+                <p><%= recipe.name %></p>
+                <p><%= recipe.user.name %></p>
+            </div>
+            <div>
+                <p>Total food items: <%= recipe.total_food %></p>
+                <p>Total price: <%= recipe.total_price %></p>
+            </div>
         </div>
-        <div>
-            
-        </div>
+    <% end %>
+<% end %>
