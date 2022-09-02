@@ -7,6 +7,7 @@ class GeneralShoppingListController < ApplicationController
     end
 
     def index
+      @recipe = Recipe.find(params[:recipe])
       user_foods = current_user.foods
       @recipe = Recipe.find(params[:recipe])
       recipe_foods = @recipe.recipe_foods.includes(:food)
