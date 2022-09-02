@@ -31,13 +31,17 @@
   <div class="recipe_details_description">
     <p><%= @recipe.description %></p>
   </div>
-
-  <div class="recipe_details_options">
-    <%= link_to "Generate shopping list", general_shopping_list_index_path , class: "btn_generate_shopping_list" %>
-    <% if can? :manage, @recipe %>
+  <% if can? :manage, @recipe %>
+    <div class="recipe_details_options">
+      <%= form_with url: general_shopping_list_index_path do |f|%>
+        <%= f.hidden_field :recipe_id, value: @recipe.id %>
+        <%= f.submit "Generate shopping list", class: "btn_generate_shopping_list"%>
+      <% end %>
+      
       <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id) , class: "btn_add_ingredient" %>
-    <% end %>
-  </div>
+      
+    </div>
+  <% end %>
   <hr>
   <div class="recipe_details_ingredients">
     <table>
