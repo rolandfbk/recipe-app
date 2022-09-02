@@ -6,9 +6,9 @@ class GeneralShoppingListController < ApplicationController
 
   def index
     @recipe = Recipe.find(params[:recipe])
-    recipe_foods = @recipe.recipe_foods.includes(:food)
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
     @food_items_to_buy = []
-    recipe_foods.each do |rfood|
+    @recipe_foods.each do |rfood|
       item = {
         name: rfood.food.name,
         quantity: rfood.food.quantity < rfood.quantity ? rfood.quantity - rfood.food.quantity : rfood.quantity,
