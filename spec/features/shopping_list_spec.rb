@@ -5,8 +5,8 @@ RSpec.describe 'Shopping list page test', type: :feature do
     before :each do
       @user = User.create(name: 'Grabrielle', email: 'gabrielle@test.com', password: '123456789')
       @recipe = @user.recipes.create(name: 'La soupe au choux', preparation_time: '2 hours', cooking_time: '1 hour',
-                                    description: 'La soupe au choux description')
-      
+                                     description: 'La soupe au choux description')
+
       visit new_user_session_path
       fill_in 'Email', with: 'gabrielle@test.com'
       fill_in 'Password', with: '123456789'
