@@ -1,23 +1,25 @@
+<div class="container">
 <div class="add_recipe_action">
-  <%= link_to "Add recipe", new_recipe_path , class: "btn_add_recipe" %>
+  <%= link_to "Add recipe", new_recipe_path , class: "btn btn-primary" %>
 </div>
 
 <% @recipes.each do |recipe| %>
   <% if can? :manage, recipe %>
-    <div>  
-      <div class="recipe_card">
-        <div class="recipe_name">
+    <div class="card mb-3">  
+      <div class="card-body row">
+        <div class="col-lg-4">
           <h3><%= link_to "#{recipe.name}", recipe_path(recipe.id) %></h3>
           <% if can? :destroy, recipe %>
             <div class="delete_recipe_action">
-              <%= button_to "REMOVE", { action: :destroy, id: recipe.id }, method: :delete, class: "btn_delete_recipe"  %>
+              <%= button_to "REMOVE", { action: :destroy, id: recipe.id }, method: :delete, class: "btn btn-danger"  %>
             </div>
           <% end %>
         </div>
-        <div class="recipe_description">
+        <div class="col-lg-6">
           <p><%= recipe.description %></p>
         </div>
       </div>
     </div>
   <% end %>
 <% end %>
+</div>
