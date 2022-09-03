@@ -1,0 +1,15 @@
+<h1 class="text-center">List of public repices</h1>
+<% @public_recipes.each do |recipe| %>
+    <%= link_to recipe_path(recipe.id), class: "card w-50 my-3 mx-auto", style: "text-decoration: none" do %>
+        <div class="card-body row">
+            <div class="col-lg-5">
+                <p><%= recipe.name %></p>
+                <p>By: <%= recipe.user.name %></p>
+            </div>
+            <div class="col-lg-5">
+                <p>Total food items: <%= recipe.total_food %></p>
+                <p>Total price: <%= recipe.total_price %></p>
+            </div>
+        </div>
+    <% end %>
+<% end %>
