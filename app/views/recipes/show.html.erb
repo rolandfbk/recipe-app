@@ -32,13 +32,8 @@
   
   <% if can? :manage, @recipe %>
     <div class="d-flex my-4 mx-auto justify-content-between w-50">
-      <%= form_with url: general_shopping_list_index_path do |f|%>
-        <%= f.hidden_field :recipe_id, value: @recipe.id %>
-        <%= f.submit "Generate shopping list", class: "btn btn-outline-primary"%>
-      <% end %>
-      
+      <%= link_to "Generate shopping list", general_shopping_list_index_path, class: "btn btn-outline-primary" %>
       <%= link_to "Add ingredient", new_recipe_recipe_food_path(@recipe.id) , class: "btn btn-outline-primary" %>
-      
     </div>
   <% end %>
   <hr>
